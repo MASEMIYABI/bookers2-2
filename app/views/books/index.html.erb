@@ -1,5 +1,17 @@
 <h1>User info</h1>
-
+<table class = "table">
+  <tr>
+    <%= attachment_image_tag @user, :image, fallback:"no_image.jpg", size: "100x100" %>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <th><%= @user.name %></th>
+  </tr>
+  <tr>
+    <th>introduction</th>
+    <th><%= @user.introduction %></th>
+  </tr>
+</table>
 
 <h1>New </h1>
 <%= form_with model:@book,urlurl:'/books', local:true do |f| %>
