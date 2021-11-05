@@ -1,35 +1,6 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-3'>
-      <table class = "table">
-        <tr>
-          <%= attachment_image_tag @user, :image, fallback:"no_image.jpg", size: "100x100" %>
-        </tr>
-        <tr>
-          <th>Name</th>
-          <th><%= @user.name %></th>
-        </tr>
-        <tr>
-          <th>introduction</th>
-          <th><%= @user.introduction %></th>
-        </tr>
-      </table>
-
-      <h1>New book</h1>
-      <%= form_with model:@book,urlurl:'/books', local:true do |f| %>
-      <div class = "form-group">
-        <label for = "book_title">Title</label>
-        <%= f.text_field:title %>
-      </div>
-      <div class = "form-group">
-        <label for = "book_opinion">Opinion</label>
-        <%= f.text_area:body %>
-      </div>
-      <div class = "form-group">
-        <%= f.submit 'Create Book', class: "btn btn-success" %>
-      </div>
-      <% end %>
-    </div>
+    <%= render 'books/list',user: @user ,book: @book%>
     <div class='col-md-8 offset-md-1'>
       <h2>Users</h2>
       <table class = 'table table-hover table-inverse'>
